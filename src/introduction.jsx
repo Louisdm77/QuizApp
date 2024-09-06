@@ -9,6 +9,8 @@ const Intro = () => {
   const [disp, setDisp] = useState("none");
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [submit, setSubmit] = useState(false);
+  const [userAnswer, setUserAnswer] = useState([""]);
+
   let x = 0;
   const colorChange = (e) => {
     setColor(e.target.value);
@@ -29,6 +31,24 @@ const Intro = () => {
     setVisible(true);
   };
 
+  const handleAnswer = (answer) => {
+    setUserAnswer((prevAnswer) => {
+      const newAnswer = [...prevAnswer];
+      newAnswer[currentQuestion] = answer;
+      console.log(newAnswer);
+      return newAnswer;
+    });
+  };
+  const checkAnswers = () => {
+    let scr = 0;
+    for (let x = 0; x < userAnswer.length; x++) {
+      if (userAnswer[x] === Questions[x].correctAnswer) {
+        scr++;
+      }
+    }
+    setScore(scr);
+    console.log(scr);
+  };
   return (
     <>
       <button
@@ -178,7 +198,10 @@ const Intro = () => {
                       return (
                         <span key={ansIndex}>
                           <input
-                            key={x + 1}
+                            key={ansIndex}
+                            onClick={() => {
+                              handleAnswer(answer);
+                            }}
                             type="button"
                             value={answer}
                             style={{
@@ -187,6 +210,10 @@ const Intro = () => {
                               padding: "10px",
                               width: "350px",
                               marginBottom: "10px",
+                              backgroundColor:
+                                userAnswer[currentQuestion] === answer
+                                  ? "green"
+                                  : "",
                             }}
                           />{" "}
                         </span>
@@ -237,7 +264,10 @@ const Intro = () => {
                     Next
                   </button>
                 </div>
-                <button style={{ display: submit === true ? "block" : "none" }}>
+                <button
+                  onClick={checkAnswers}
+                  style={{ display: submit === true ? "block" : "none" }}
+                >
                   Submit
                 </button>
               </div>
