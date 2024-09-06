@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Questions from "./questions.json";
-const Intro = () => {
-  const [visi, setVisi] = useState(true);
+const Intro = (props) => {
   const [visible, setVisible] = useState(false);
   const [show, setShow] = useState(false);
   const [color, setColor] = useState("aliceblue");
@@ -10,6 +9,7 @@ const Intro = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [submit, setSubmit] = useState(false);
   const [userAnswer, setUserAnswer] = useState([""]);
+  const [introDisp, setIntroDisp] = useState(true);
 
   let x = 0;
   const colorChange = (e) => {
@@ -55,7 +55,7 @@ const Intro = () => {
         onClick={() => {
           display();
           setShow(false);
-          setVisi(false);
+          props.setVisi(false);
         }}
         style={{
           textAlign: "center",
@@ -63,7 +63,7 @@ const Intro = () => {
           border: "none",
           padding: "10px",
           backgroundColor: "yellow",
-          display: visi ? "block" : "none",
+          display: props.visi ? "block" : "none",
           margin: "auto",
         }}
       >

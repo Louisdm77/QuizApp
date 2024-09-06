@@ -5,80 +5,107 @@ const Navigation = () => {
     <div style={{ width: "100%" }}>
       <div
         style={{
-          padding: "50px",
-          margin: "auto",
-          width: "fit-content",
+          padding: "10px",
+          boxSizing: "border-box",
+          width: "100%",
           backdropFilter: "blur(10px)",
-          backgroundColor: "aliceblue",
+          borderRadius: "10px",
         }}
       >
         {" "}
         <header>
-          <h3
-            style={{
-              textAlign: "center",
-              fontSize: "40px",
-              color: "green",
-            }}
-          >
-            University of React
-          </h3>
-          <h4 style={{ textAlign: "center", padding: "0px", fontSize: "20px" }}>
-            2020/2021 Departmental quiz
-          </h4>
-          <h5 style={{ textAlign: "center", padding: "0px", fontSize: "15px" }}>
-            Answer all questions and re check before submiting
-          </h5>
-          <ul
+          <div
             style={{
               display: "flex",
-              listStyleType: "none",
+              alignItems: "center",
               justifyContent: "space-between",
-              fontSize: "20px",
-              marginTop: "40px",
-              padding: "10px",
+              paddingTop: 0,
             }}
           >
-            <li>
-              <Link
-                to="/"
-                style={{
-                  textDecoration: "none",
-                  backgroundColor: "green",
-                  padding: "10px",
-                  color: "white",
-                }}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/quiz"
-                style={{
-                  textDecoration: "none",
-                  backgroundColor: "green",
-                  padding: "10px",
-                  color: "white",
-                }}
-              >
-                Quiz
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/theme"
-                style={{
-                  textDecoration: "none",
-                  backgroundColor: "green",
-                  padding: "10px",
-                  color: "white",
-                }}
-              >
-                Theme
-              </Link>
-            </li>
-          </ul>
+            <h3
+              style={{
+                textAlign: "start",
+                fontSize: "20px",
+                backgroundColor: "transparent",
+                opacity: 0.5,
+                color: "white",
+              }}
+            >
+              Quizopolis
+            </h3>
+            <ul
+              style={{
+                display: "flex",
+                opacity: 0.8,
+                listStyleType: "none",
+                justifyContent: "space-between",
+                fontSize: "1em",
+                padding: "10px",
+              }}
+            >
+              <li>
+                <Link
+                  to="/"
+                  style={{
+                    textDecoration: "none",
+                    padding: "10px",
+                    color: "white",
+                  }}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to=""
+                  style={{
+                    textDecoration: "none",
+                    padding: "10px",
+                    color: "white",
+                  }}
+                >
+                  Library
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/theme"
+                  style={{
+                    textDecoration: "none",
+                    padding: "10px",
+                    color: "white",
+                  }}
+                >
+                  Theme
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/theme"
+                  style={{
+                    textDecoration: "none",
+                    padding: "10px",
+                    color: "white",
+                  }}
+                >
+                  About
+                </Link>
+              </li>
+            </ul>
+
+            <button
+              style={{
+                border: "none",
+                backgroundColor: "lightblue",
+                fontSize: "20px",
+                padding: "10px",
+                borderRadius: "10px",
+                color: "white",
+              }}
+            >
+              Signup
+            </button>
+          </div>
         </header>
       </div>
     </div>
