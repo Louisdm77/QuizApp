@@ -75,14 +75,16 @@ const Intro = (props) => {
         style={{
           width: "60%",
           margin: "auto",
-          backgroundColor: "rgb(189,197,202)",
           padding: "30px",
           fontFamily: "verdana",
           color: "white",
           display: visible ? "block" : "none",
           textAlign: "center",
-
           marginTop: "50px",
+          backgroundColor: "rgba(255, 255, 255, 0.1)",
+          backdropFilter: "blur(20px)",
+          borderRadius: "20px",
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2)",
         }}
       >
         <h3 style={{ fontSize: "30px" }}>Introduction</h3>
@@ -113,12 +115,17 @@ const Intro = (props) => {
         style={{
           width: "60%",
           margin: "auto",
-          backgroundColor: "rgb(189,197,202)",
+
           padding: "30px",
           fontFamily: "verdana",
           color: "white",
           display: show ? "block" : "none",
           marginTop: "50px",
+
+          backgroundColor: "rgba(255, 255, 255, 0.1)",
+          backdropFilter: "blur(20px)",
+          borderRadius: "20px",
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2)",
         }}
       >
         <h2 style={{ textAlign: "center", fontSize: "30px" }}>INSTRUCTIONS</h2>
@@ -149,7 +156,7 @@ const Intro = (props) => {
         </button>
       </div>
       <div
-        className="bg-white p-5"
+        className=" p-5"
         style={{ width: "100%", display: disp ? "block" : "none" }}
       >
         <div
@@ -160,6 +167,11 @@ const Intro = (props) => {
             backdropFilter: "blur(10px)",
             backgroundColor: color,
             boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
+            backgroundColor: "rgba(255, 255, 255, 0.1)",
+            backdropFilter: "blur(20px)",
+            borderRadius: "20px",
+            boxShadow:
+              "0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2)",
           }}
         >
           <input
@@ -196,6 +208,7 @@ const Intro = (props) => {
                     padding: "10px",
                     border: "1px solid red",
                     width: "300px",
+
                     // backgroundColor: color,
                   }}
                 >

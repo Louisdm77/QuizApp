@@ -27,10 +27,8 @@ const Home = () => {
           width: "70%",
           position: "relative",
           width: "100%",
-          height: "100%",
-          backgroundImage: `url(${pic})`,
-          backgroundSize: "cover",
-
+          height: "700px",
+          backgroundColor: "skyblue",
           paddingTop: "50px",
           backgroundRepeat: "no-repeat",
         }}
@@ -41,9 +39,11 @@ const Home = () => {
             width: "70%",
             padding: "20px",
             margin: "auto",
-            backgroundColor: "rgba(255, 255, 255, 0.5)", // white with 50% opacity
-            backdropFilter: "blur(10px)",
-            borderRadius: "10px",
+            backgroundColor: "rgba(255, 255, 255, 0.1)",
+            backdropFilter: "blur(20px)",
+            borderRadius: "20px",
+            boxShadow:
+              "0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2)",
           }}
         >
           <Navigation />
