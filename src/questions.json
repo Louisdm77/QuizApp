@@ -21,5 +21,148 @@
     "question": "What is the largest planet in our solar system?",
     "answers": ["Earth", "Saturn", "Jupiter", "Uranus"],
     "correctAnswer": "Jupiter"
+  },
+  {
+    "id": 4,
+    "question": "Which music group's original members were John, Paul, George, and Pete?",
+    "answers": [
+      "The Rolling Stones",
+      "The Beatles",
+      "The Who",
+      "The Beach Boys"
+    ],
+    "correctAnswer": "The Beatles"
+  },
+  {
+    "id": 5,
+    "question": "What is the chemical symbol for gold?",
+    "answers": ["Ag", "Au", "Hg", "Pb"],
+    "correctAnswer": "Au"
+  },
+  {
+    "id": 6,
+    "question": "Who painted the Mona Lisa?",
+    "answers": ["Leonardo da Vinci", "Michelangelo", "Raphael", "Caravaggio"],
+    "correctAnswer": "Leonardo da Vinci"
+  },
+  {
+    "id": 7,
+    "question": "What is the capital of Australia?",
+    "answers": ["Sydney", "Melbourne", "Canberra", "Perth"],
+    "correctAnswer": "Canberra"
+  },
+  {
+    "id": 8,
+    "question": "Who wrote Romeo and Juliet?",
+    "answers": [
+      "William Shakespeare",
+      "Jane Austen",
+      "Charles Dickens",
+      "J.K. Rowling"
+    ],
+    "correctAnswer": "William Shakespeare"
+  },
+  {
+    "id": 9,
+    "question": "What is the largest living species of lizard?",
+    "answers": [
+      "Komodo dragon",
+      "Saltwater crocodile",
+      "Black mamba",
+      "African elephant"
+    ],
+    "correctAnswer": "Komodo dragon"
+  },
+  {
+    "id": 10,
+    "question": "Which planet is known for being the hottest in our solar system?",
+    "answers": ["Mercury", "Venus", "Mars", "Jupiter"],
+    "correctAnswer": "Venus"
+  },
+  {
+    "id": 11,
+    "question": "Who was the lead singer of Queen?",
+    "answers": ["Freddie Mercury", "Brian May", "Roger Taylor", "John Deacon"],
+    "correctAnswer": "Freddie Mercury"
+  },
+  {
+    "id": 12,
+    "question": "Which music genre originated in the southern United States?",
+    "answers": ["Blues", "Jazz", "Country", "Rock"],
+    "correctAnswer": "Blues"
+  },
+  {
+    "id": 13,
+    "question": "Who wrote the novel To Kill a Mockingbird?",
+    "answers": [
+      "F. Scott Fitzgerald",
+      "Harper Lee",
+      "Jane Austen",
+      "J.K. Rowling"
+    ],
+    "correctAnswer": "Harper Lee"
+  },
+  {
+    "id": 14,
+    "question": "Which character from Shakespeare's Romeo and Juliet is known for saying 'What's in a name?'?",
+    "answers": ["Romeo", "Juliet", "Hamlet", "Macbeth"],
+    "correctAnswer": "Juliet"
+  },
+  {
+    "id": 15,
+    "question": "What is the chemical symbol for silver?",
+    "answers": ["Ag", "Au", "Hg", "Pb"],
+    "correctAnswer": "Ag"
+  },
+  {
+    "id": 16,
+    "question": "Who painted The Starry Night?",
+    "answers": [
+      "Vincent van Gogh",
+      "Claude Monet",
+      "Pablo Picasso",
+      "Salvador Dali"
+    ],
+    "correctAnswer": "Vincent van Gogh"
+  },
+  {
+    "id": 17,
+    "question": "Which river is the longest in South America?",
+    "answers": [
+      "Amazon River",
+      "Rio Grande",
+      "Orinoco River",
+      "Magdalena River"
+    ],
+    "correctAnswer": "Amazon River"
+  },
+  {
+    "id": 18,
+    "question": "Who painted the Mona Lisa?",
+    "answers": ["Leonardo da Vinci", "Michelangelo", "Raphael", "Caravaggio"],
+    "correctAnswer": "Leonardo da Vinci"
+  },
+  {
+    "id": 19,
+    "question": "What is the largest planet in our solar system?",
+    "answers": ["Earth", "Saturn", "Jupiter", "Uranus"],
+    "correctAnswer": "Jupiter"
+  },
+  {
+    "id": 20,
+    "question": "Which music group's original members were John, Paul, George, and Pete?",
+    "answers": [
+      "The Rolling Stones",
+      "The Beatles",
+      "The Who",
+      "The Beach Boys"
+    ],
+    "correctAnswer": "The Beatles"
+  },
+  {
+    "id": 21,
+    "question": "What is the chemical symbol for gold?",
+    "answers": ["Ag", "Au", "Hg", "Pb"],
+    "correctAnswer": "Au"
   }
 ]
