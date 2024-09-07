@@ -7,12 +7,11 @@ const Intro = (props) => {
   const [show, setShow] = useState(false);
   const [color, setColor] = useState("aliceblue");
   const [score, setScore] = useState(0);
-  const [disp, setDisp] = useState("none");
+  const [disp, setDisp] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [submit, setSubmit] = useState(false);
   const [userAnswer, setUserAnswer] = useState([""]);
-  const [introDisp, setIntroDisp] = useState(true);
-
+  const [dispScore, setDispScore] = useState(false);
   let x = 0;
   const colorChange = (e) => {
     setColor(e.target.value);
@@ -136,7 +135,7 @@ const Intro = (props) => {
           onClick={() => {
             setVisible(false);
             setShow(false);
-            setDisp("block");
+            setDisp(true);
           }}
           style={{
             margin: "auto",
@@ -149,7 +148,10 @@ const Intro = (props) => {
           Ready
         </button>
       </div>
-      <div className="bg-white p-5" style={{ width: "100%" }}>
+      <div
+        className="bg-white p-5"
+        style={{ width: "100%", display: disp ? "block" : "none" }}
+      >
         <div
           style={{
             padding: "10px",
@@ -175,7 +177,7 @@ const Intro = (props) => {
             style={{
               fontFamily: "sans-serif",
               fontSize: "20px",
-              display: disp,
+              display: disp ? "block" : "none",
             }}
           >
             {Questions[currentQuestion] && (
@@ -271,18 +273,25 @@ const Intro = (props) => {
                     Next
                   </button>
                 </div>
+
                 <button
-                  onClick={checkAnswers}
                   style={{ display: submit === true ? "block" : "none" }}
+                  onClick={() => {
+                    checkAnswers();
+                    setDisp(false);
+                    setDispScore(true);
+                  }}
+                  type="button"
+                  class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                 >
-                  Submit
+                  SUBMIT
                 </button>
               </div>
             )}
           </div>
         </div>
       </div>
-      <Score core={score} />
+      <Score core={score} sub={dispScore} />
     </>
   );
 };
