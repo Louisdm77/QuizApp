@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Questions from "./questions.json";
+import Score from "./Score";
+import "./index.css";
 const Intro = (props) => {
   const [visible, setVisible] = useState(false);
   const [show, setShow] = useState(false);
@@ -47,11 +49,12 @@ const Intro = (props) => {
       }
     }
     setScore(scr);
-    console.log(scr);
+    console.log(score);
   };
   return (
     <>
       <button
+        className="bg-indigo-500 opacity-75 "
         onClick={() => {
           display();
           setShow(false);
@@ -59,10 +62,9 @@ const Intro = (props) => {
         }}
         style={{
           textAlign: "center",
-          color: "green",
-          border: "none",
+          color: "white",
+          borderRadius: "10px",
           padding: "10px",
-          backgroundColor: "yellow",
           display: props.visi ? "block" : "none",
           margin: "auto",
         }}
@@ -79,30 +81,33 @@ const Intro = (props) => {
           fontFamily: "verdana",
           color: "white",
           display: visible ? "block" : "none",
+          textAlign: "center",
 
           marginTop: "50px",
         }}
       >
-        <h3>Introduction</h3>
+        <h3 style={{ fontSize: "30px" }}>Introduction</h3>
 
         <p>
-          "Get ready to test your knowledge and unleash your inner genius! Take
-          our quiz and discover how much you really know. From history to pop
-          culture, we've got questions to challenge and delight you."
+          "Get ready to test your knowledge and discover how much you really
+          know. From history to pop culture, we've got questions to challenge
+          and delight you."
         </p>
         <button
+          className="bg-indigo-500 opacity-50"
           onClick={() => {
             setVisible(false);
             setShow(true);
           }}
           style={{
             margin: "auto",
+            marginTop: "20px",
             display: "block",
             border: "none",
             padding: "10px",
           }}
         >
-          Proceed with quiz
+          Proceed
         </button>
       </div>
       <div
@@ -117,9 +122,9 @@ const Intro = (props) => {
           marginTop: "50px",
         }}
       >
-        <h2 style={{ textAlign: "center" }}>INSTRUCTIONS</h2>
+        <h2 style={{ textAlign: "center", fontSize: "30px" }}>INSTRUCTIONS</h2>
 
-        <ol>
+        <ol style={{ listStyleType: "decimal" }}>
           <li>Read each question carefully</li>
           <li> Select only one answer per question.</li>
           <li>Click "Next" to proceed to the next question.</li>
@@ -127,6 +132,7 @@ const Intro = (props) => {
         </ol>
 
         <button
+          className="bg-indigo-500 opacity-50 "
           onClick={() => {
             setVisible(false);
             setShow(false);
@@ -143,7 +149,7 @@ const Intro = (props) => {
           Ready
         </button>
       </div>
-      <div style={{ width: "100%", backgroundColor: "black" }}>
+      <div className="bg-white p-5" style={{ width: "100%" }}>
         <div
           style={{
             padding: "10px",
@@ -154,16 +160,16 @@ const Intro = (props) => {
             boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
           }}
         >
-          <div>
-            <p>
-              Score:<span>{score}</span>
-            </p>
-          </div>
           <input
             type="color"
             value={color}
             onChange={colorChange}
-            style={{ width: "10px", height: "10px", display: "none" }}
+            style={{
+              width: "0px",
+              height: "0px",
+              display: "none",
+              backgroundColor: "transparent",
+            }}
           />
           <div
             style={{
@@ -183,11 +189,12 @@ const Intro = (props) => {
               >
                 <p>{currentQuestion + 1}. </p>
                 <span
+                  className="bg-gray-100 mb-4"
                   style={{
                     padding: "10px",
                     border: "1px solid red",
-                    width: "400px",
-                    backgroundColor: color,
+                    width: "300px",
+                    // backgroundColor: color,
                   }}
                 >
                   {Questions[currentQuestion].question}
@@ -196,7 +203,7 @@ const Intro = (props) => {
                   {Questions[currentQuestion].answers.map(
                     (answer, ansIndex) => {
                       return (
-                        <span key={ansIndex}>
+                        <span className="bg-gray-100" key={ansIndex}>
                           <input
                             key={ansIndex}
                             onClick={() => {
@@ -208,7 +215,7 @@ const Intro = (props) => {
                               display: "block",
                               border: "1px solid green",
                               padding: "10px",
-                              width: "350px",
+                              width: "250px",
                               marginBottom: "10px",
                               backgroundColor:
                                 userAnswer[currentQuestion] === answer
@@ -275,6 +282,7 @@ const Intro = (props) => {
           </div>
         </div>
       </div>
+      <Score core={score} />
     </>
   );
 };
