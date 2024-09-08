@@ -7,7 +7,14 @@ const Score = (props) => {
 
   const [showScore, setShowScore] = useState(false);
   const [bye, setBye] = useState(false);
-
+  const [nodis, setNodis] = useState(false);
+  const [disable, setDisable] = useState(false);
+  const handlelDisable = () => {
+    setDisable(true);
+  };
+  const handleNoDisable = () => {
+    setNodis(true);
+  };
   return (
     <>
       <div>
@@ -41,16 +48,22 @@ const Score = (props) => {
             }}
           >
             <button
-              onClick={() => setShowScore(!showScore)}
+              disabled={disable === true}
+              onClick={() => {
+                setShowScore(!showScore);
+                handleNoDisable();
+              }}
               type="button"
               class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
             >
               YES
             </button>
             <button
+              disabled={nodis === true}
               onClick={() => {
                 setBye(true);
                 setShowScore(false);
+                handlelDisable();
               }}
               type="button"
               class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
@@ -97,6 +110,12 @@ const Score = (props) => {
           class="mb-3 font-normal text-gray-700 dark:text-gray-400"
         >
           Hello Examiner, your Score is <span>{props.core}</span>
+          <div
+            class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
+            role="alert"
+          >
+            You can now exit the application!
+          </div>
         </p>
       </div>
     </>

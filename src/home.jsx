@@ -7,9 +7,9 @@ import "./index.css";
 import { useState } from "react";
 const Home = () => {
   const [visi, setVisi] = useState(true);
+
   const style = {
     textAlign: "center",
-
     color: "white",
     fontSize: "30px",
   };
@@ -18,6 +18,7 @@ const Home = () => {
 
     color: "white",
   };
+
   return (
     <>
       <div
@@ -35,7 +36,7 @@ const Home = () => {
         <div
           className="shadow-sm drop-shadow-2xl backdrop-blur-xl"
           style={{
-            width: "70%",
+            width: "80%",
             padding: "20px",
             margin: "auto",
             backgroundColor: "rgba(255, 255, 255, 0.1)",

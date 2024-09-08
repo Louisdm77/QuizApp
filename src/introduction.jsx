@@ -12,6 +12,7 @@ const Intro = (props) => {
   const [submit, setSubmit] = useState(false);
   const [userAnswer, setUserAnswer] = useState([""]);
   const [dispScore, setDispScore] = useState(false);
+
   let x = 0;
   const colorChange = (e) => {
     setColor(e.target.value);
@@ -73,11 +74,10 @@ const Intro = (props) => {
       <div
         className="intro"
         style={{
-          width: "60%",
           margin: "auto",
           padding: "30px",
           fontFamily: "verdana",
-          color: "white",
+          color: "black",
           display: visible ? "block" : "none",
           textAlign: "center",
           marginTop: "50px",
@@ -87,7 +87,9 @@ const Intro = (props) => {
           boxShadow: "0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2)",
         }}
       >
-        <h3 style={{ fontSize: "30px" }}>Introduction</h3>
+        <h3 style={{ fontSize: "30px", textAlign: "center !important" }}>
+          Introduction
+        </h3>
 
         <p>
           "Get ready to test your knowledge and discover how much you really
@@ -95,7 +97,7 @@ const Intro = (props) => {
           and delight you."
         </p>
         <button
-          className="bg-indigo-500 opacity-50"
+          className="bg-indigo-500 "
           onClick={() => {
             setVisible(false);
             setShow(true);
@@ -113,7 +115,6 @@ const Intro = (props) => {
       </div>
       <div
         style={{
-          width: "60%",
           margin: "auto",
 
           padding: "30px",
@@ -128,9 +129,11 @@ const Intro = (props) => {
           boxShadow: "0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2)",
         }}
       >
-        <h2 style={{ textAlign: "center", fontSize: "30px" }}>INSTRUCTIONS</h2>
+        <h2 style={{ textAlign: "center", fontSize: "30px", color: "black" }}>
+          INSTRUCTIONS
+        </h2>
 
-        <ol style={{ listStyleType: "decimal" }}>
+        <ol style={{ listStyleType: "decimal", color: "black" }}>
           <li>Read each question carefully</li>
           <li> Select only one answer per question.</li>
           <li>Click "Next" to proceed to the next question.</li>
@@ -138,7 +141,7 @@ const Intro = (props) => {
         </ol>
 
         <button
-          className="bg-indigo-500 opacity-50 "
+          className="bg-indigo-500"
           onClick={() => {
             setVisible(false);
             setShow(false);
