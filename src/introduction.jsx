@@ -129,16 +129,16 @@ const Intro = (props) => {
           boxShadow: "0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2)",
         }}
       >
-        <h2 style={{ textAlign: "center", fontSize: "30px", color: "black" }}>
+        <h2 style={{ textAlign: "center", fontSize: "25px", color: "black" }}>
           INSTRUCTIONS
         </h2>
 
-        <ol style={{ listStyleType: "decimal", color: "black" }}>
+        <ul style={{ color: "black" }}>
           <li>Read each question carefully</li>
           <li> Select only one answer per question.</li>
           <li>Click "Next" to proceed to the next question.</li>
           <li>Click on READY to see questions</li>
-        </ol>
+        </ul>
 
         <button
           className="bg-indigo-500"
