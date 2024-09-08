@@ -24,10 +24,9 @@ const Home = () => {
         className="backdrop-blur-xl"
         style={{
           fontFamily: "Arial",
-          width: "70%",
           position: "relative",
           width: "100%",
-          height: "700px",
+          height: "100vh",
           backgroundColor: "skyblue",
           paddingTop: "50px",
           backgroundRepeat: "no-repeat",

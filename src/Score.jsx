@@ -86,7 +86,16 @@ const Score = (props) => {
           Tests Result
         </h5>
 
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <p
+          style={{
+            backgroundColor: "rgba(255, 255, 255, 0.1)",
+            backdropFilter: "blur(20px)",
+            borderRadius: "20px",
+            boxShadow:
+              "0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.2)",
+          }}
+          class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+        >
           Hello Examiner, your Score is <span>{props.core}</span>
         </p>
       </div>
