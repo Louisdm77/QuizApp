@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./index.css";
-import Questions from "./Questions";
+import Questions from "./questions.json";
 const Score = (props) => {
   console.log(props.core);
   console.log(props.sub);
