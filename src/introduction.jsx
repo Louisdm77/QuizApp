@@ -300,7 +300,12 @@ const Intro = (props) => {
           </div>
         </div>
       </div>
-      <Score core={score} sub={dispScore} />
+      <Score
+        core={score}
+        sub={dispScore}
+        setSub={setDispScore}
+        answers={userAnswer}
+      />
     </>
   );
 };

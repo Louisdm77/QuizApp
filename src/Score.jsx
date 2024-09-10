@@ -1,19 +1,25 @@
 import React from "react";
 import { useState } from "react";
 import "./index.css";
+import Questions from "./Questions";
 const Score = (props) => {
   console.log(props.core);
   console.log(props.sub);
+  console.log(props.answers);
 
   const [showScore, setShowScore] = useState(false);
   const [bye, setBye] = useState(false);
   const [nodis, setNodis] = useState(false);
   const [disable, setDisable] = useState(false);
+  const [show, setShow] = useState(false);
   const handlelDisable = () => {
     setDisable(true);
   };
   const handleNoDisable = () => {
     setNodis(true);
+  };
+  const showw = () => {
+    setShow(!show);
   };
   return (
     <>
@@ -52,6 +58,7 @@ const Score = (props) => {
               onClick={() => {
                 setShowScore(!showScore);
                 handleNoDisable();
+                props.setSub(false);
               }}
               type="button"
               class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
@@ -109,12 +116,60 @@ const Score = (props) => {
           }}
           class="mb-3 font-normal text-gray-700 dark:text-gray-400"
         >
-          Hello Examiner, your Score is <span>{props.core}</span>
+          Hello Student, your Score is <span>{props.core}</span>
           <div
             class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
             role="alert"
           >
-            You can now exit the application!
+            Do you want to check the answers to the questions you missed? <br />
+            <button
+              onClick={showw}
+              type="button"
+              class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+            >
+              YES
+            </button>
+            <button
+              type="button"
+              class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+            >
+              NO
+            </button>
+            <div style={{ display: show ? "block" : "none" }}>
+              {Questions.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    style={{
+                      textAlign: "start",
+                      marginBottom: "30px",
+                      fontFamily: "serif",
+                    }}
+                  >
+                    <h3 style={{ color: "black", fontWeight: "bolder" }}>
+                      {index + 1}. Question: {item.question}
+                    </h3>
+                    <p>
+                      <span style={{ fontWeight: "bold" }}>Your Answer</span>:{" "}
+                      {props.answers[index] !== undefined
+                        ? props.answers[index]
+                        : "______"}
+                    </p>
+                    <p
+                      style={{
+                        color: "red",
+                        fontSize: "15px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {" "}
+                      <span>Answer :</span>
+                      {Questions[index].correctAnswer}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </p>
       </div>

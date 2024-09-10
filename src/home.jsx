@@ -27,7 +27,7 @@ const Home = () => {
           fontFamily: "Arial",
           position: "relative",
           width: "100%",
-          height: "100vh",
+          height: "100%",
           backgroundColor: "skyblue",
           paddingTop: "50px",
           backgroundRepeat: "no-repeat",
