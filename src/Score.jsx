@@ -94,7 +94,6 @@ const Score = (props) => {
           color: "white",
           textAlign: "center",
           fontSize: "30px",
-          display: "flex",
           justifyContent: "center",
           alignItems: "center",
           margin: "auto",
