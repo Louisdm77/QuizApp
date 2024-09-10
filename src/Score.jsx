@@ -12,6 +12,7 @@ const Score = (props) => {
   const [nodis, setNodis] = useState(false);
   const [disable, setDisable] = useState(false);
   const [show, setShow] = useState(false);
+  const [timeoutt, setTimeoutt] = useState(5);
   const handlelDisable = () => {
     setDisable(true);
   };
@@ -21,6 +22,21 @@ const Score = (props) => {
   const showw = () => {
     setShow(!show);
   };
+
+  const closedown = () => {
+    let interval = setInterval(() => {
+      setTimeoutt((prevTime) => {
+        const newTime = prevTime - 1;
+        if (newTime === 0) {
+          clearInterval(interval);
+          window.location.reload();
+        }
+        return newTime;
+      });
+    }, 1000);
+  };
+
+  const closeApp = () => {};
   return (
     <>
       <div>
@@ -71,6 +87,8 @@ const Score = (props) => {
                 setBye(true);
                 setShowScore(false);
                 handlelDisable();
+                props.setSub(false);
+                closedown();
               }}
               type="button"
               class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
@@ -86,7 +104,14 @@ const Score = (props) => {
         role="alert"
       >
         <span class="font-medium">Hello!</span> You can now exit the
-        application!
+        application!{" "}
+        <p>
+          App closing in{" "}
+          <span style={{ color: "red", fontWeight: "bold", fontSize: "20px" }}>
+            {timeoutt}
+          </span>{" "}
+          seconds
+        </p>
       </div>
 
       <div
@@ -129,6 +154,11 @@ const Score = (props) => {
               YES
             </button>
             <button
+              onClick={() => {
+                setBye(true);
+                setShowScore(false);
+                closedown();
+              }}
               type="button"
               class="mt-4 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
             >
